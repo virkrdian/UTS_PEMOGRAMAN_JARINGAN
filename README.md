@@ -48,3 +48,31 @@ Jalankan atau Modifikasi Program:
 Jika proyek memiliki instruksi khusus untuk konfigurasi atau instalasi dependensi, ikuti petunjuk tersebut.
 Buka dan jalankan program sesuai dengan instruksi proyek.
 Dengan mengikuti langkah-langkah ini, Anda seharusnya dapat mengunduh, membuka, dan menjalankan program yang ada di GitHub.
+
+
+
+
+Program transfer file enkripsi ini adalah aplikasi sederhana yang menggunakan socket untuk mengirim file dari klien (client) ke server. Namun, sebelum file dikirim, program melakukan proses enkripsi terlebih dahulu menggunakan algoritma enkripsi AES (Advanced Encryption Standard).
+
+Langkah-langkah yang terjadi dalam program transfer file enkripsi ini adalah sebagai berikut:
+
+1. **Inisialisasi Koneksi:**
+   - Klien membuat socket untuk terhubung ke server yang berjalan pada localhost dan port tertentu (dalam contoh ini, port 12312).
+
+2. **Pengiriman File:**
+   - Klien membaca file yang akan dikirim (dalam contoh ini, `file_to_send.txt`) ke dalam buffer dan mengirimnya melalui koneksi socket ke server menggunakan OutputStream.
+  
+3. **Enkripsi File:**
+   - Setelah file berhasil dikirim, klien memanggil fungsi `encryptFile()` untuk melakukan proses enkripsi pada file yang sama (`file_to_send.txt`).
+   - Proses enkripsi dilakukan dengan menggunakan kunci AES yang telah ditetapkan (di sini disimpan dalam bentuk string biasa, namun dalam implementasi yang lebih aman, kunci akan diperoleh dengan cara yang lebih aman).
+
+4. **Proses Enkripsi:**
+   - File yang akan dienkripsi dibaca ke dalam byte array.
+   - Objek Cipher diinisialisasi dengan algoritma enkripsi AES menggunakan kunci yang telah disediakan.
+   - Isi file dienkripsi menggunakan metode `doFinal()` dari objek Cipher.
+   - Hasil enkripsi disimpan ke dalam file baru (`file_to_send_encrypted.txt`).
+
+5. **Penutup Koneksi:**
+   - Setelah pengiriman file yang belum dienkripsi dan file yang telah dienkripsi selesai, koneksi socket ditutup.
+
+Namun, penting untuk dicatat bahwa keamanan program ini dapat ditingkatkan. Penyimpanan kunci dalam bentuk string biasa dalam kode sumber adalah praktik yang tidak aman. Dalam lingkungan produksi, penggunaan kunci enkripsi yang lebih aman dan pengelolaan kunci yang tepat akan menjadi prioritas utama untuk menjaga keamanan transfer file terenkripsi.
