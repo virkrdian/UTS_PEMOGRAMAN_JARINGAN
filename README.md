@@ -1,8 +1,14 @@
 UTS-Pemograman-Jaringan
 Ini adalah Tugas Pemograman Jaringan dari kelompok yang ber anggotakan Virki Fardian (362201022) , Raden Hasan (362201019), Muhammad Rahmadika (362201024).
  dua program ini dibuat: 
--Program UnblockingServer\Client :Virki Fardian Nur Rohman (362201022) 
--Program BlockingServer\Client\ClintHandlr :Raden Hasan RR (362201019) 
+
+
+-Program Server :Virki Fardian Nur Rohman (362201022) 
+
+
+-Program Client :Raden Hasan RR (362201019) 
+
+
 -Membuat kata-kata presentasi maupun yang ada di Github : Muhammad Rahmadika (362201024) dan Virki F N R (362201022)
 
 Tentu, berikut adalah langkah-langkah umum untuk membuka program dari GitHub:
